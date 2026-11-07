@@ -24,3 +24,10 @@ All communication between the Central Brain and Hardware Controller is strictly 
 - `EyeCommand`: LCD screen expressions and pupil coordinates (`expression`, `brightness`, `pupil_x`, `pupil_y`).
 - `SensorTelemetry`: Real-time 10Hz readings (`battery_voltage`, `tof_front_cm`, `tof_rear_cm`, `imu_roll`, `imu_pitch`, `imu_yaw`).
 - `HeartbeatCommand`: 200ms periodic safety pulse.
+
+## Hardware Abstraction Layer & ESP32 Simulator
+To develop and test without physical hardware:
+```bash
+./run_simulator.sh
+```
+The simulator emulates ESP32-S3 firmware, prints motor PWM updates, and enforces the 1000ms safety watchdog.
