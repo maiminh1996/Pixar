@@ -1,0 +1,16 @@
+hardware:
+  broker_url: "localhost"
+  broker_port: 1883
+  heartbeat_interval_s: 0.20
+  watchdog_timeout_ms: 1000
+  collision_distance_cm: 20.0
+  max_linear_speed_m_s: 1.0
+  max_angular_speed_rad_s: 2.0
+
+servos:
+  pan_center: 90.0
+  pan_min: 30.0
+  pan_max: 150.0
+  tilt_center: 90.0
+  tilt_min: 70.0
+  tilt_max: 120.0
