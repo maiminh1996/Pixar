@@ -12,7 +12,7 @@ An autonomous Pixar-style companion robot featuring tank-track differential driv
 
 ## Engineering Roadmap
 - [x] Sprint 1: Project charter, Pydantic schemas, Mosquitto MQTT, and hardware simulator.
-- [ ] Sprint 2: 3D PAD emotion engine and lifelike state machine.
+- [x] Sprint 2: 3D PAD emotion engine and lifelike state machine.
 - [ ] Sprint 3: Local voice pipeline with faster-whisper, Qwen2.5, and Piper TTS.
 - [ ] Sprint 4: Vision tracking (YOLOv11) and persistent long-term memory (SQLite).
 - [ ] Sprint 5: Mission control web dashboard and ESP32-S3 FreeRTOS C++ firmware.
@@ -31,3 +31,9 @@ To develop and test without physical hardware:
 ./run_simulator.sh
 ```
 The simulator emulates ESP32-S3 firmware, prints motor PWM updates, and enforces the 1000ms safety watchdog.
+
+## Pixar 3D PAD Emotion Engine
+The robot's psychological state is governed by a Pleasure-Arousal-Dominance (PAD) model:
+- Moods: `happy`, `playful`, `curious`, `angry`, `sad`, `comfortable`, `neutral`.
+- Continuous emotional decay back to baseline over time.
+- Direct mapping to servo body gestures and LCD screen expressions.

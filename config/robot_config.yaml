@@ -14,3 +14,11 @@ servos:
   tilt_center: 90.0
   tilt_min: 70.0
   tilt_max: 120.0
+
+emotion:
+  decay_rate_per_second: 0.05
+  idle_behavior_interval_s: 3.5
+  blink_interval_s: 4.0
+  resting_valence: 0.25
+  resting_arousal: 0.20
+  resting_dominance: 0.05
