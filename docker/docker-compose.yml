@@ -1,11 +1,29 @@
 services:
   mqtt-broker:
-    image: eclipse-mosquitto:2.0
+    image: eclipse-mosquitto:2.0.18
     container_name: mqtt-broker
     ports:
       - "1883:1883"
+      - "9001:9001"
     volumes:
       - ../config/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    restart: unless-stopped
+
+  brain-core:
+    build:
+      context: ..
+      dockerfile: brain/Dockerfile
+    container_name: brain-core
+    environment:
+      - MQTT_BROKER_URL=mqtt-broker
+      - MQTT_BROKER_PORT=1883
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../config:/app/config:ro
+    depends_on:
+      - mqtt-broker
     restart: unless-stopped
 
   esp32-simulator:
